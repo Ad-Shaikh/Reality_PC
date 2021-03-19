@@ -113,3 +113,25 @@ body {
   height: 250px;
   width: 100%;
 }
+
+.b-btn,
+.f-btn {
+  background: transparent;
+  color: white;
+  position: absolute;
+  z-index: 3;
+  /* border: 1px solid white; */
+  cursor: pointer;
+  padding: 8px;
+}
+.mini-slide-container {
+  position: relative;
+}
+.b-btn {
+  left: 0%;
+  top: 50%;
+}
+.f-btn {
+  right: 0%;
+  top: 50%;
+}
