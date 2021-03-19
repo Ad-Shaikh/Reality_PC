@@ -3,8 +3,66 @@
   rel="stylesheet"
   href="{{ url_for('static', filename = 'CSS/home.css') }}"
 />
-{% endblock css %} {% include 'nav.html' %}{% block content %} 
+{% endblock css %} {% include 'nav.html' %}{% block content %}
+<section>
+  <!-- slideshow overlay -->
 
+  <div class="slideshow-container">
+    <div class="mySlides slide">
+      <img src="../static/images/main/main 0.png" />
+      <div class="text">Caption Text</div>
+    </div>
 
+    <div class="mySlides slide">
+      <img src="../static/images/main/main 1.png" />
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides slide">
+      <img src="../static/images/main/main 2.png" />
+      <div class="text">Caption Three</div>
+    </div>
+    <div class="mySlides slide">
+      <img src="../static/images/main/main 3.png" />
+      <div class="text">Caption Three</div>
+    </div>
+  </div>
+  <!-- dots below overlay -->
+  <div style="text-align: center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
+<section id="mini-slide">
+  <div class="mini-slide-container mx-2">
+    <img class="miniSlides1" src="../static/images/accessories/acc1.png" />
+    <img class="miniSlides1" src="../static/images/accessories/acc2.png" />
+    <img class="miniSlides1" src="../static/images/accessories/acc3.png" />
+    <img class="miniSlides1" src="../static/images/accessories/acc4.png" />
+    <img class="miniSlides1" src="../static/images/accessories/acc5.png" />
+    <button class="" onclick="plusDivs1(-1)">&#10094;</button>
+    <button class="" onclick="plusDivs1(1)">&#10095;</button>
+  </div>
+  <div class="mini-slide-container mx-2">
+    <img class="miniSlides2" src="../static/images/accessories/cpu1.png" />
+    <img class="miniSlides2" src="../static/images/accessories/acc2.png" />
+    <img class="miniSlides2" src="../static/images/accessories/acc3.png" />
+    <img class="miniSlides2" src="../static/images/accessories/acc4.png" />
+    <img class="miniSlides2" src="../static/images/accessories/acc5.png" />
+    <button class="" onclick="plusDivs2(-1)">&#10094;</button>
+    <button class="" onclick="plusDivs2(1)">&#10095;</button>
+  </div>
+  <div class="mini-slide-container mx-2">
+    <img class="miniSlides3" src="../static/images/accessories/gpu1.png" />
+    <img class="miniSlides3" src="../static/images/accessories/acc2.png" />
+    <img class="miniSlides3" src="../static/images/accessories/acc3.png" />
+    <img class="miniSlides3" src="../static/images/accessories/acc4.png" />
+    <img class="miniSlides3" src="../static/images/accessories/acc5.png" />
+    <button class="" onclick="plusDivs3(-1)">&#10094;</button>
+    <button class="" onclick="plusDivs3(1)">&#10095;</button>
+  </div>
+</section>
 
 {% endblock content %}
