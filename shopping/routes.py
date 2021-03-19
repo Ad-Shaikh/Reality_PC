@@ -1,13 +1,16 @@
 from shopping import app, mysql
 from flask import render_template, url_for, flash, redirect,request, session
-from shopping.forms import RegistrationForm,LoginForm
+from shopping.forms import ContactForm, RegistrationForm,LoginForm
+from shopping.models import footer
 from flask_mysqldb import MySQL 
 import MySQLdb.cursors 
 import re 
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    contact= footer.footer()
+
+    return render_template('home.html', contact=contact)
 
 @app.route('/login',methods=['GET', 'POST'])
 def login():
@@ -62,6 +65,6 @@ def register():
     if form.validate_on_submit():
         flash(f'Account created for {form.username.data}!', 'success')
         return redirect(url_for('login'))
-    return render_template('register.html', msg = msg,form=form,title='Register') 
+    return render_template('register.html', msg = msg,form=form, title='Register') 
     
     

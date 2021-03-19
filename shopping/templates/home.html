@@ -4,7 +4,7 @@
   href="{{ url_for('static', filename = 'CSS/home.css') }}"
 />
 {% endblock css %} {% include 'nav.html' %}{% block content %}
-<section>
+<section class="my-4">
   <!-- slideshow overlay -->
 
   <div class="slideshow-container">
@@ -64,7 +64,33 @@
     <div class="f-btn" onclick="plusDivs3(1)">&#10095;</div>
   </div>
 </section>
+<section class="home-cards d-flex justify-content-center mt-5">
+  <div class="card-bg d-flex flex-row">
+    <div class="card mx-2">
+      <img class="" src="../static/images/PC/pc1.png" alt="" />
+    </div>
+    <div class="card mx-2">
+      <img src="../static/images/PC/pc2.png" alt="" />
+    </div>
+    <div class="card mx-2">
+      <img src="../static/images/PC/pc3.png" alt="" />
+    </div>
+  </div>
+</section>
 
-{% endblock content %} {% block js %}
+<section class="home-cards d-flex justify-content-center mt-5">
+  <div class="card-bg d-grid">
+    <div class="card mx-2">
+      <img class="" src="../static/images/accessories/acc6.png" alt="" />
+    </div>
+    <div class="card mx-2">
+      <img src="../static/images/accessories/head1.png" alt="" />
+    </div>
+    <div class="card mx-2">
+      <img src="../static/images/accessories/speaker1.png" alt="" />
+    </div>
+  </div>
+</section>
+{% endblock content %} {% include 'footer.html' %} {% block js %}
 <script src="../static/JS/home.js"></script>
 {% endblock js %}

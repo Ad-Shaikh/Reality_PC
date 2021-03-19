@@ -1,7 +1,7 @@
 body {
   background: url(../images/bg-blur.png);
   /* background-color: ; */
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
   background-size: cover;
   background-position: fixed;
 }
@@ -23,7 +23,7 @@ body {
 
 .slideshow-container {
   width: 96%;
-  height: 75vh;
+  height: 90%;
   position: relative;
   margin: 1% 2% 0 2%;
   /* border: 1px solid black; */
@@ -99,8 +99,7 @@ body {
 #mini-slide {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  /* grid-gap: 5px; */
-  /* margin: 5px; */
+  padding: 2%;
 }
 /* .mini-slide-container {
 } */
@@ -134,4 +133,17 @@ body {
 .f-btn {
   right: 0%;
   top: 50%;
+}
+.card-bg {
+  width: 95%;
+  padding: 30px;
+  background: #368aad;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 5px;
+}
+.card {
+  border: none;
+  background: black;
+  height: fit-content;
+  border-radius: 5px;
 }

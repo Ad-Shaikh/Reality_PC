@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 17, 2021 at 02:29 PM
+-- Generation Time: Mar 19, 2021 at 02:26 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -20,6 +20,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `reality_pc`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `contact`
+--
+
+CREATE TABLE `contact` (
+  `id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(15) NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -43,11 +57,17 @@ INSERT INTO `users` (`id`, `username`, `email`, `phone`, `password`) VALUES
 (1, 'faisal', 'test@email.com', '7864888666', 'test1234'),
 (2, 'shabina', 'email@ymail.com', '9898989898', 'test1234'),
 (3, 'reshma', 'resh@gmail.com', '32487348348', 'reshmakhan'),
-(5, 'adnan', 'adnan@gmail.com', '21263438939', 'adnans');
+(4, 'adnan', 'adnan@gmail.com', '21263438939', 'adnans');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `contact`
+--
+ALTER TABLE `contact`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `users`
@@ -58,6 +78,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `contact`
+--
+ALTER TABLE `contact`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
