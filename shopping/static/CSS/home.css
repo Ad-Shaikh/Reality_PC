@@ -1,6 +1,5 @@
 body {
   background: url(../images/bg-blur.png);
-  /* background-color: ; */
   background-repeat: repeat-y;
   background-size: cover;
   background-position: fixed;
@@ -119,20 +118,20 @@ body {
   color: white;
   position: absolute;
   z-index: 3;
-  /* border: 1px solid white; */
   cursor: pointer;
-  padding: 8px;
+  padding-left: 8px;
+  padding-right: 8px;
 }
 .mini-slide-container {
   position: relative;
 }
 .b-btn {
   left: 0%;
-  top: 50%;
+  top: 45%;
 }
 .f-btn {
   right: 0%;
-  top: 50%;
+  top: 45%;
 }
 .card-bg {
   width: 95%;
@@ -141,7 +140,7 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 5px;
 }
-.card {
+.home-cards .card {
   border: none;
   background: black;
   height: fit-content;
