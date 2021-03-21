@@ -87,13 +87,14 @@ def profile():
     if 'email' in session:
         form = UpdateProfileForm()
         msg = ''
-        if request.method=='GET':
-            e = session['email']
-            cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
-            cursor.execute('SELECT * FROM users WHERE email = % s', (e, )) 
-            account = cursor.fetchone()
-            return render_template('profile.html',account=account, msg = msg, form=form, title='Profile')
-        else: 
+        # if request.method=='GET':
+        #     e = session['email']
+        #     cursor = mysql.connection.cursor(MySQLdb.cursors.DictCursor) 
+        #     cursor.execute('SELECT * FROM users WHERE email = % s', (e, )) 
+        #     account = cursor.fetchone()
+        #     return render_template('profile.html',account=account, msg = msg, form=form, title='Profile')
+        # else:
+        if request.method=='POST': 
             username = request.form['username']
             email = request.form['email'] 
             phone= request.form['phone']
@@ -118,6 +119,31 @@ def profile():
         if form.validate_on_submit():
             flash(f'Account updated for {{form.username.data}}!', 'success')
             return redirect(url_for('home'))
-        return render_template('profile.html',account=account, msg = msg,form=form, title='Profile')
+        return render_template('profile.html', msg = msg,form=form, title='Profile')
     else:
         return redirect(url_for('login'))
+
+
+@app.route('/mother')
+def mother():
+    contact=ContactForm()
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('home'))
+    return render_template('mother.html', contact= contact,form=form)
+
+@app.route('/cpu')
+def cpu():
+    contact=ContactForm()
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('home'))
+    return render_template('cpu.html', contact= contact,form=form)
+
+@app.route('/gpu')
+def gpu():
+    contact=ContactForm()
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('home'))
+    return render_template('gpu.html', contact= contact,form=form)
