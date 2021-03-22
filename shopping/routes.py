@@ -147,3 +147,11 @@ def gpu():
     if request.method=='POST':
         return redirect(url_for('home'))
     return render_template('gpu.html', contact= contact,form=form)
+
+@app.route('/storage')
+def storage():
+    contact=ContactForm()
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('home'))
+    return render_template('storage.html', contact= contact,form=form)

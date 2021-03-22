@@ -1,4 +1,4 @@
 {
-  "python.pythonPath": "e:\\Projects\\Flask apps\\test\\Reality_PC\\venv\\Scripts\\python.exe",
+  "python.pythonPath": "venv\\Scripts\\python.exe",
   "git.ignoreLimitWarning": true
 }

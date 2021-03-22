@@ -1,9 +1,5 @@
 {% extends 'layout.html' %}{% block css %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename = 'CSS/nav.css') }}"
-/>
-{% endblock css %} {% block nav %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/nav.css') }}" /> {% endblock css %} {% block nav %}
 <header>
     <div class="d-flex justify-content-between">
         <div class="left d-flex">
@@ -20,7 +16,7 @@
                 <i class="fa fa-user fa-3x" aria-hidden="true"></i>
             </div>
             <div class="cart-logo m-3">
-            <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
+                <i class="fa fa-shopping-cart fa-3x" aria-hidden="true"></i>
             </div>
         </div>
     </div>
@@ -40,10 +36,10 @@
                 <a class="nav-link" href="{{url_for('cpu')}}">CPU'S</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">GPU's</span></a>
+                <a class="nav-link" href="{{url_for('gpu')}}">GPU's</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Storage</a>
+                <a class="nav-link" href="{{url_for('storage')}}">Storage</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Power Supply</span></a>

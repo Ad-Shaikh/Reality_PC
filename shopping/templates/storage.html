@@ -1,5 +1,5 @@
 {% extends 'layout.html' %} {% block css %}
-<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/gpu.css') }}" /> {% endblock css %} {% include 'nav.html' %}{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename = 'CSS/storage.css') }}" /> {% endblock css %} {% include 'nav.html' %}{% block content %}
 <section>
     <section class="my-4">
         <!-- slideshow overlay -->
@@ -33,31 +33,31 @@
         </div>
     </section>
     <section class="home-cards mt-5">
-        <div class="card-title my-4">NVIDIA</div>
+        <div class="card-title my-4">SSD</div>
         <div class="card-bg d-grid">
             <div class="card">
-                <img class="" src="../static/images/gpu/card1-1.png" alt="" />
+                <img class="" src="../static/images/storage/ssd/wd/wd_smain.png" alt="" /> Western Digital (WD)
             </div>
             <div class="card">
-                <img src="../static/images/gpu/card1-2.png" alt="" />
+                <img src="../static/images/storage/ssd/samsung/samsung_smain.png" alt="" /> Samsung
             </div>
             <div class="card">
-                <img src="../static/images/gpu/card1-3.png" alt="" />
+                <img src="../static/images/storage/ssd/adata/adata_smain.png" alt="" /> ADATA
             </div>
             <div class="card">
-                <img src="../static/images/gpu/card1-4.png" alt="" />
+                <img src="../static/images/storage/ssd/corsair/corsair_smain.png" alt="" /> Corsair
             </div>
             <div class="card">
-                <img src="../static/images/gpu/card1-5.png" alt="" />
+                <img src="../static/images/storage/ssd/kingston/kingston_smain.png" alt="" /> kingston
             </div>
             <div class="card">
-                <img src="../static/images/gpu/card1-6.png" alt="" />
+                <img src="../static/images/storage/ssd/seagate/seagate_smain.png" alt="" /> Seagate
             </div>
         </div>
     </section>
 
     <section class="home-cards center mt-5">
-        <div class="card-title my-4">AMD</div>
+        <div class="card-title my-4">HDD</div>
         <div class="card-bg d-grid">
             <div class="card">
                 <img class="" src="../static/images/gpu/card2-1.png" alt="" />
@@ -76,6 +76,30 @@
             </div>
             <div class="card">
                 <img src="../static/images/gpu/card2-6.png" alt="" />
+            </div>
+        </div>
+    </section>
+
+    <section class="home-cards mt-5">
+        <div class="card-title my-4">PORTABLE SSD</div>
+        <div class="card-bg d-grid">
+            <div class="card">
+                <img class="" src="../static/images/storage/portable ssd/samsung/samsung_pmain.png" alt="" /> Samsung
+            </div>
+            <div class="card">
+                <img src="../static/images/storage/portable ssd/wd/wd_pmain.png" alt="" /> Western Digital (WD)
+            </div>
+            <div class="card">
+                <img src="../static/images/storage/portable ssd/seagate/seagate_pmain.png" alt="" /> Seagate
+            </div>
+            <div class="card">
+                <img src="../static/images/storage/portable ssd/adata/adata_pmain.png" alt="" /> ADATA
+            </div>
+            <div class="card">
+                <img src="../static/images/gpu/card1-5.png" alt="" />
+            </div>
+            <div class="card">
+                <img src="../static/images/gpu/card1-6.png" alt="" />
             </div>
         </div>
     </section>
