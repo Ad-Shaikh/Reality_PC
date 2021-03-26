@@ -1,8 +1,8 @@
 from datetime import datetime
+from math import degrees
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from shopping import db, login_manager, app
 from flask_login import UserMixin
-
 
 @login_manager.user_loader
 def load_user(user_id):
@@ -10,7 +10,7 @@ def load_user(user_id):
 
 
 class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer(15), primary_key=True)
     username = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), unique=True, nullable=False)
     phone = db.Column(db.String(120), unique=True, nullable=False)
@@ -34,7 +34,7 @@ class User(db.Model, UserMixin):
         return f"User('{self.username}', '{self.email}', '{self.image_file}', '{self.phone}')"
 
 class Contact(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer(15), primary_key=True)
     username = db.Column(db.String(20), nullable=False)
     email = db.Column(db.String(120), nullable=False)
     phone = db.Column(db.String(120), nullable=False)
@@ -42,6 +42,24 @@ class Contact(db.Model, UserMixin):
 
     def __repr__(self):
         return f"User('{self.username}', '{self.email}','{self.phone}', '{self.message}')"
+
+class Category(db.Model, UserMixin):
+    id = db.Column(db.Integer(15), primary_key=True)
+    category_name=db.Column(db.String(50),nullable=False)
+
+class SubCategory(db.Model,UserMixin):
+    id = db.Column(db.Integer(15), primary_key=True)
+    category_id = db.Column(db.Integer(15), db.ForeignKey('category.id') ,nullable=False)
+    subcategory_name=db.Column(db.String(50), nullable=False)
+
+class Product(db.Model, UserMixin):
+    id = db.Column(db.Integer(15),primary_key=True)
+    category_id = db.Column(db.Integer(15), db.ForeignKey('category.id') ,nullable=False)
+    subcategory_id = db.Column(db.Integer, db.ForeignKey('subcategory.id') ,nullable=False)
+    name = db.Column(db.String(120), unique=True, nullable=False)
+    des = db.Column(db.String(120), unique=True, nullable=False)
+    img = db.Column(db.String(20), nullable=False, default='default.jpg')
+    price = db.Column(db.Integer(10), unique=True, nullable=False)
 
 
 # class cart_items(db.Model, UserMixin):
