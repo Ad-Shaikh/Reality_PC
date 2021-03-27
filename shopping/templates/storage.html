@@ -38,23 +38,19 @@
   </section>
   <section class="home-cards mt-5">
     <!-- ***************Overlay************* -->
+    {% for i in storage %}
     <div id="overlay">
       <div id="overlay-flex">
         <div class="overlay-content">
-          <div class="overlay-head">Western Digital (WD)</div>
-          <div class="overlay-description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nisi
-            voluptatibus dolor, rerum quos perferendis voluptatum, repudiandae
-            provident officiis debitis, veniam aliquid sit porro praesentium
-            harum! Adipisci omnis accusantium aliquid totam?
-          </div>
+          <div class="overlay-head">{{ i.name }}</div>
+          <div class="overlay-description">{{ i.des }}</div>
           <div class="overlay-cart-amt">
-            <div class="overlay-amt">$ 150</div>
+            <div class="overlay-amt">${{ i.price }}</div>
             <div class="overlay-cart">Add to Cart</div>
           </div>
         </div>
         <div class="overlay-img">
-          <img src="../static/images/storage/ssd/wd/wd_smain.png" alt="" />
+          <img src="{{ img }}" alt="" />
         </div>
         <i
           class="close-overlay fa fa-times-circle"
@@ -64,18 +60,17 @@
         ></i>
       </div>
     </div>
+    {% endfor %}
     <!-- ***************Overlay************* -->
 
     <div class="card-title my-4">SSD</div>
     <div class="card-bg d-grid">
+      {% for i in storage %}
       <div class="card" onclick="on()">
-        <img
-          class=" "
-          src="../static/images/storage/ssd/wd/wd_smain.png "
-          alt=" "
-        />
-        Western Digital (WD)
+        <img class=" " src="{{ img }}" alt=" " />
+        {{i.name}}
       </div>
+      {% endfor %}
       <div class="card">
         <img
           src="../static/images/storage/ssd/samsung/samsung_smain.png "

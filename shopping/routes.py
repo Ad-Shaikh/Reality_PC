@@ -6,7 +6,7 @@ from sqlalchemy.sql.functions import user
 from shopping import app,db,bcrypt
 from flask import render_template, url_for, flash, redirect,request, session
 from shopping.forms import ContactForm, RegistrationForm,LoginForm, UpdateProfileForm
-from shopping.models import User,Contact
+from shopping.models import User,Contact,Category, SubCategory,Product
 from flask_login import login_user, current_user, logout_user, login_required
 from sqlalchemy import insert,update,delete
 import re 
@@ -55,7 +55,7 @@ def register():
     form = RegistrationForm()
     if form.validate_on_submit():
         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-        user = User(username=form.username.data, email=form.email.data,phone=form.phone.data,image_file=form.picture, password=hashed_password)
+        user = User(username=form.username.data, email=form.email.data,phone=form.phone.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
         flash('Your account has been created! You are now able to log in', 'success')
@@ -130,9 +130,15 @@ def gpu():
 @app.route('/storage')
 def storage():
     form= footer.footer()
+    storage=Product.query.filter_by(category_id=4).all()
+    for i in storage:
+        img= url_for('static', filename='images/storage/' + i.img)
+
     if request.method=='POST':
-        return redirect(url_for('home'))
-    return render_template('storage.html',form=form)
+        return redirect(url_for('home'))        
+    return render_template('storage.html',form=form,storage=storage,img=img)
+
+    
 
 @app.route('/cart')
 def cart():
