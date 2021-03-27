@@ -67,10 +67,10 @@ class Product(db.Model, UserMixin):
     id = db.Column(db.Integer,primary_key=True)
     category_id = db.Column(db.Integer, db.ForeignKey('Category.id') ,nullable=False)
     subcategory_id = db.Column(db.Integer, db.ForeignKey('SubCategory.id') ,nullable=False)
-    name = db.Column(db.String(120), unique=True, nullable=False)
-    des = db.Column(db.String(120), unique=True, nullable=False)
+    name = db.Column(db.String(120), nullable=False)
+    des = db.Column(db.String(120), nullable=False)
     img = db.Column(db.String(20), nullable=False, default='default.jpg')
-    price = db.Column(db.Integer, unique=True, nullable=False)
+    price = db.Column(db.Integer, nullable=False)
 
     def __repr__(self):
         return f"Product('{self.id}', '{self.subcategory_id}','{self.name}', '{self.des}',, '{self.img}', '{self.price}')"

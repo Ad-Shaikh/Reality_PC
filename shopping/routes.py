@@ -22,7 +22,7 @@ class footer():
       query=Contact(username=name, email=email,phone=phone, message=message)
       db.session.add(query)
       db.session.commit()
-      msg = "We got your query, we'll revert to u back soon.."
+      msg = "We go t your query, we'll revert to u back soon.."
     return contact
 
 
@@ -110,36 +110,63 @@ def logout():
 def mother():
     form= footer.footer()
     if request.method=='POST':
-        return redirect(url_for('home'))
+        return redirect(url_for('mother'))
     return render_template('mother.html',form=form)
 
 @app.route('/cpu')
 def cpu():
     form= footer.footer()
     if request.method=='POST':
-        return redirect(url_for('home'))
+        return redirect(url_for('cpu'))
     return render_template('cpu.html', form=form)
 
 @app.route('/gpu')
 def gpu():
     form= footer.footer()
     if request.method=='POST':
-        return redirect(url_for('home'))
+        return redirect(url_for('gpu'))
     return render_template('gpu.html',form=form)
 
 @app.route('/storage')
 def storage():
     form= footer.footer()
-    storage=Product.query.filter_by(category_id=4).all()
-    for i in storage:
-        img= url_for('static', filename='images/storage/' + i.img)
-
+    ssd=Product.query.filter_by(subcategory_id=7).all()
+    hdd=Product.query.filter_by(subcategory_id=8).all()
+    pdisk=Product.query.filter_by(subcategory_id=9).all()
     if request.method=='POST':
-        return redirect(url_for('home'))        
-    return render_template('storage.html',form=form,storage=storage,img=img)
-
-    
+        return redirect(url_for('storage'))        
+    return render_template('storage.html',form=form,ssd=ssd,hdd=hdd,pdisk=pdisk)
+        
 
 @app.route('/cart')
 def cart():
     return render_template('cart.html')
+
+@app.route('/powersupply')
+def powersupply():
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('powersupply'))
+    return render_template('power.html',form=form)
+
+@app.route('/cooling')
+def cooling():
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('cooling'))
+    return render_template('cooling.html',form=form)
+
+
+@app.route('/peripherals')
+def peripherals():
+    form= footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('peripherals'))
+    return render_template('peripherals.html',form=form)
+
+@app.route('/cases')
+def cases():
+    form = footer.footer()
+    if request.method=='POST':
+        return redirect(url_for('cases'))
+    return render_template('cases.html',form=form)
